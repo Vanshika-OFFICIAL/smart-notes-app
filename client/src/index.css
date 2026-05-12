@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== YOUR CUSTOM STYLES ==== */
+
+.smart-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#FDF8EE,#FFF3E8,#FEFDF5,#F0FAF4);
+}
+
+.card {
+  backdrop-filter: blur(24px);
+  background: rgba(255,253,248,0.75);
+  border-radius: 28px;
+  border: 1px solid rgba(246,195,71,0.24);
+  box-shadow: 0 8px 40px rgba(244,132,95,0.14);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg,#F6C347,#F4845F);
+}
+.smart-bg {
+  background: linear-gradient(
+    135deg,
+    #fdf8ee,
+    #fff3e8,
+    #fefdf5,
+    #f0faf4
+  );
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
