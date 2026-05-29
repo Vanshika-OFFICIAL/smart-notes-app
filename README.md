@@ -127,8 +127,8 @@ CLIENT_URL=YOUR_FRONTEND_URL
 ### Clone Repository
 
 ```bash
-git clone [https://github.com/your-username/smart-notes.git](https://github.com/Vanshika-OFFICIAL/smart-notes-app)
-cd smart-notes
+git clone https://github.com/Vanshika-OFFICIAL/smart-notes-app.git
+cd smart-notes-app
 ```
 
 ### Frontend Setup
