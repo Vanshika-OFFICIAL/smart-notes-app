@@ -6,13 +6,16 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 const noteRoutes = require("./routes/noteRoutes");
 const cors = require("cors");
-app.use(cors({
-  origin:[
-    "http://localhost:5173",
-    "http://localhost:5174",
-  ],
-  credentials:true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      process.env.VITE_CLIENT_URL,
+    ],
+    credentials: true,
+  })
+);
 app.get("/api/protected", auth, (req, res) => {
   res.json({ msg: "Protected OK", userId: req.user.id });
 });
@@ -26,6 +29,8 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-app.listen(5000, () => {
-  console.log("Server started on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
