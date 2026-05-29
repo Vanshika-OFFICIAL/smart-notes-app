@@ -111,7 +111,7 @@ exports.forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetLink = `http://localhost:5173/reset-password/${token}`;
+    const resetLink = `${process.env.VITE_CLIENT_URL}/reset-password/${token}`;
 
     await transporter.sendMail({
       from: `"Smart Notes" <${process.env.EMAIL_USER}>`,
