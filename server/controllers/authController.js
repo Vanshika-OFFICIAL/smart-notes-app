@@ -1,5 +1,5 @@
-const transporter = require("../mailer");
-const User = require("../User");
+const transporter = require("../config/mailer");
+const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
