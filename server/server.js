@@ -11,7 +11,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      process.env.VITE_CLIENT_URL,
+      "https://smart-notes-app-wheat.vercel.app",
     ],
     credentials: true,
   })
