@@ -16,12 +16,6 @@ A modern full-stack note-taking application built with the MERN stack, featuring
 <img width="1913" height="955" alt="image" src="https://github.com/user-attachments/assets/1a51e2fe-ddbd-4682-8018-9e9b6a1b1d1d" />
 <img width="1912" height="956" alt="image" src="https://github.com/user-attachments/assets/edf0027c-7fe1-42a9-b5cd-72e27b151f6c" />
 
-Example:
-
-```md
-![Dashboard Screenshot](./screenshots/dashboard.png)
-```
-
 ---
 
 ## ✨ Features
