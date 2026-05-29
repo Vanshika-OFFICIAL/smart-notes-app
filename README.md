@@ -8,6 +8,11 @@ A modern full-stack note-taking application built with the MERN stack, featuring
 
 ⚙️ Backend API: https://smart-notes-app-nt7z.onrender.com
 
+## 🧪 Demo Account
+
+Email: test@gmail.com
+
+Password: Test123
 ---
 
 ## 📸 Preview
