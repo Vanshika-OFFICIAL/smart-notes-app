@@ -1,13 +1,13 @@
 const router = require("express").Router();
 
-const auth = require("../middleware/auth");
+const auth = require("./middleware/auth");
 
 const {
   createNote,
   getNotes,
   updateNote,
   deleteNote,
-} = require("../controllers/noteController");
+} = require("./controllers/noteController");
 
 router.post("/", auth, createNote);
 
