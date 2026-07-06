@@ -141,29 +141,7 @@ const handleRegister = async () => {
         <div style={{ flex: 1, height: "1px", background: "#eee" }} />
       </div>
 
-      {/* SOCIAL */}
-      <div style={{ display: "flex", gap: "12px" }}>
-        <button style={{
-          flex: 1,
-          padding: "10px",
-          borderRadius: "12px",
-          border: "1px solid #eee",
-          background: "white"
-        }}>
-          Google
-        </button>
-
-        <button style={{
-          flex: 1,
-          padding: "10px",
-          borderRadius: "12px",
-          border: "1px solid #eee",
-          background: "white"
-        }}>
-          GitHub
-        </button>
-      </div>
-
+     
       {/* LOGIN LINK */}
       <p style={{
         marginTop: "22px",

@@ -180,49 +180,7 @@ export default function LoginForm() {
         <div style={{ flex: 1, height: "1px", background: "#eee" }} />
       </div>
 
-      {/* SOCIAL BUTTONS */}
-      <div style={{ display: "flex", gap: "12px" }}>
-        <button
-          style={{
-            flex: 1,
-            padding: "10px",
-            borderRadius: "12px",
-            border: "1px solid #eee",
-            background: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-          }}
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-            width="18"
-          />
-          Google
-        </button>
-
-        <button
-          style={{
-            flex: 1,
-            padding: "10px",
-            borderRadius: "12px",
-            border: "1px solid #eee",
-            background: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-          }}
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-            width="18"
-          />
-          GitHub
-        </button>
-      </div>
-
+      
       {/* REGISTER LINK */}
       <p
         style={{
