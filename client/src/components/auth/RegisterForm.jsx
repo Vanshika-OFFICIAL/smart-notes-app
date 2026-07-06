@@ -127,20 +127,6 @@ const handleRegister = async () => {
         {loading ? "Creating..." : "Create account →"}
       </button>
 
-      {/* DIVIDER */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        margin: "24px 0",
-        color: "#A89270",
-        fontSize: "14px"
-      }}>
-        <div style={{ flex: 1, height: "1px", background: "#eee" }} />
-        or continue with
-        <div style={{ flex: 1, height: "1px", background: "#eee" }} />
-      </div>
-
      
       {/* LOGIN LINK */}
       <p style={{
