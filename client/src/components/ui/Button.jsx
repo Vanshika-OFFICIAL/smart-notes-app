@@ -34,28 +34,10 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={loading}
+      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[16px] px-5 py-3.5 text-[0.9375rem] font-semibold shadow-[0_8px_24px_rgba(244,132,95,0.15)] transition duration-200 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-80"
       style={{
         width: fullWidth ? "100%" : "auto",
-
-        padding: "14px 20px",
-
-        borderRadius: "16px",
-
-        fontWeight: "600",
-
-        fontSize: "15px",
-
-        cursor: loading
-          ? "not-allowed"
-          : "pointer",
-
-        transition: "0.25s ease",
-
-        boxShadow:
-          "0 8px 24px rgba(244,132,95,0.15)",
-
-        opacity: loading ? 0.8 : 1,
-
+        touchAction: "manipulation",
         ...variants[variant],
       }}
     >

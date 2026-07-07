@@ -33,27 +33,15 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="smart-bg flex items-center justify-center min-h-screen relative">
+    <div className="smart-bg relative flex min-h-dvh items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
       <Background />
 
       <AuthCard>
-
-        <h1
-          style={{
-            fontSize: "34px",
-            marginBottom: "10px",
-            color: "#2A1F0D",
-          }}
-        >
+        <h1 className="mb-2 font-['Fraunces',serif] text-[clamp(1.85rem,5.8vw,2.125rem)] leading-tight text-[#2A1F0D]">
           Reset Password
         </h1>
 
-        <p
-          style={{
-            marginBottom: "24px",
-            color: "#6B5B3E",
-          }}
-        >
+        <p className="mb-6 text-sm text-[#6B5B3E] sm:text-[15px]">
           Enter your new password
         </p>
 
@@ -64,28 +52,12 @@ export default function ResetPassword() {
           onChange={(e) =>
             setPassword(e.target.value)
           }
-          style={{
-            width: "100%",
-            padding: "14px",
-            borderRadius: "12px",
-            border: "1px solid #ddd",
-            marginBottom: "16px",
-          }}
+          className="mb-4 w-full rounded-[14px] border border-[rgba(246,195,71,0.3)] bg-white/90 px-4 py-3.5 text-base text-[#2A1F0D] outline-none transition focus:border-[rgba(244,132,95,0.45)] focus:ring-2 focus:ring-[rgba(244,132,95,0.18)] sm:py-4"
         />
 
         <button
           onClick={handleReset}
-          style={{
-            width: "100%",
-            padding: "14px",
-            borderRadius: "14px",
-            border: "none",
-            background:
-              "linear-gradient(135deg,#F6C347,#F4845F)",
-            color: "white",
-            fontWeight: "600",
-            cursor: "pointer",
-          }}
+          className="inline-flex min-h-12 w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] px-4 py-3 text-[0.9375rem] font-semibold text-white transition active:scale-[0.99]"
         >
           {loading
             ? "Updating..."

@@ -24,77 +24,28 @@ export default function LoginForm() {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
-      {/* LOGO */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "10px",
-          marginBottom: "20px",
-        }}
-      >
-        <div
-          style={{
-            width: "46px",
-            height: "46px",
-            borderRadius: "14px",
-            background: "linear-gradient(135deg,#F6C347,#F4845F)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontSize: "20px",
-            fontWeight: "bold",
-          }}
-        >
+    <div className="text-center">
+      <div className="mb-4 flex items-center justify-center gap-2 sm:mb-5 sm:gap-2.5">
+        <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] text-lg font-bold text-white shadow-sm sm:h-12 sm:w-12 sm:text-xl">
           ✦
         </div>
 
-        <h2
-          style={{
-            fontFamily: "Fraunces, serif",
-            fontSize: "22px",
-            fontWeight: "700",
-            color: "#2A1F0D",
-          }}
-        >
+        <h2 className="font-['Fraunces',serif] text-[1.375rem] font-bold text-[#2A1F0D] sm:text-[1.45rem]">
           Smart Notes
         </h2>
       </div>
 
-      {/* TITLE */}
-      <h1
-        style={{
-          fontFamily: "Fraunces, serif",
-          fontSize: "34px",
-          color: "#2A1F0D",
-          marginBottom: "6px",
-        }}
-      >
+      <h1 className="mb-1.5 font-['Fraunces',serif] text-[clamp(1.9rem,6vw,2.125rem)] leading-tight text-[#2A1F0D]">
         Welcome{" "}
-        <span
-          style={{
-            color: "#F4845F",
-            fontStyle: "italic",
-          }}
-        >
+        <span className="italic text-[#F4845F]">
           back
         </span>
       </h1>
 
-      <p
-        style={{
-          color: "#6B5B3E",
-          marginBottom: "26px",
-          fontSize: "15px",
-        }}
-      >
+      <p className="mb-6 text-sm text-[#6B5B3E] sm:text-[15px]">
         Your thoughts are waiting for you
       </p>
 
-      {/* EMAIL */}
       <Input
         label="Email address"
         type="email"
@@ -102,84 +53,45 @@ export default function LoginForm() {
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      {/* PASSWORD */}
-      <div style={{ position: "relative" }}>
-        <Input
-          label="Password"
-          type={show ? "text" : "password"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <Input
+        label="Password"
+        type={show ? "text" : "password"}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        trailingElement={
+          <button
+            type="button"
+            onClick={() => setShow(!show)}
+            aria-label={show ? "Hide password" : "Show password"}
+            className="rounded-full p-1 text-sm leading-none text-[#6B5B3E] transition hover:text-[#F4845F] focus:outline-none focus:ring-2 focus:ring-[rgba(244,132,95,0.2)]"
+          >
+            {show ? "🙈" : "👁"}
+          </button>
+        }
+      />
 
-        {/* 👁 Eye Icon */}
-        <span
-          onClick={() => setShow(!show)}
-          style={{
-            position: "absolute",
-            right: "14px",
-            top: "38px",
-            cursor: "pointer",
-            color: "#6B5B3E",
-          }}
-        >
-          {show ? "🙈" : "👁"}
-        </span>
-      </div>
-
-      {/* FORGOT PASSWORD */}
-      <div
-        style={{
-          textAlign: "right",
-          fontSize: "13px",
-          marginBottom: "12px",
-        }}
-      >
-        <span
+      {/* <div className="mb-3 text-right text-[0.8125rem] sm:text-sm">
+        <button
+          type="button"
           onClick={() => navigate("/forgot-password")}
-          style={{ color: "#F4845F", cursor: "pointer" }}
+          className="cursor-pointer text-[#F4845F] transition hover:underline"
         >
           Forgot password?
-        </span>
-      </div>
+        </button>
+      </div> */}
 
-      {/* ERROR */}
-      {error && <p style={{ color: "red", fontSize: "13px" }}>{error}</p>}
+      {error && <p className="mb-3 text-sm text-red-500">{error}</p>}
 
-      {/* BUTTON */}
       <button
         onClick={handleLogin}
-        style={{
-          width: "100%",
-          padding: "14px",
-          borderRadius: "14px",
-          background: "linear-gradient(135deg,#F6C347,#F4845F)",
-          color: "white",
-          border: "none",
-          marginTop: "10px",
-          fontWeight: "500",
-          fontSize: "15px",
-          cursor: "pointer",
-        }}
+        className="mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] px-4 py-3 text-[0.9375rem] font-medium text-white transition active:scale-[0.99]"
       >
         Sign in →
       </button>
-      
-      {/* REGISTER LINK */}
-      <p
-        style={{
-          marginTop: "22px",
-          fontSize: "14px",
-          color: "#6B5B3E",
-        }}
-      >
+
+      <p className="mt-5 text-sm text-[#6B5B3E]">
         Don’t have an account?{" "}
-        <Link
-          to="/register"
-          style={{
-            color: "#F4845F",
-            fontWeight: "500",
-          }}
-        >
+        <Link to="/register" className="font-medium text-[#F4845F] transition hover:underline">
           Create one free
         </Link>
       </p>

@@ -35,65 +35,28 @@ const handleRegister = async () => {
 };
 
   return (
-    <div style={{ textAlign: "center" }}>
-      {/* LOGO */}
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "10px",
-        marginBottom: "20px"
-      }}>
-        <div style={{
-          width: "44px",
-          height: "44px",
-          borderRadius: "12px",
-          background: "linear-gradient(135deg,#F6C347,#F4845F)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          fontSize: "18px"
-        }}>
+    <div className="text-center">
+      <div className="mb-4 flex items-center justify-center gap-2 sm:mb-5 sm:gap-2.5">
+        <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] text-lg font-bold text-white shadow-sm sm:h-12 sm:w-12 sm:text-xl">
           ✦
         </div>
 
-        <h2 style={{
-          fontFamily: "Fraunces, serif",
-          fontSize: "22px",
-          fontWeight: "700",
-          color: "#2A1F0D"
-        }}>
+        <h2 className="font-['Fraunces',serif] text-[1.375rem] font-bold text-[#2A1F0D] sm:text-[1.45rem]">
           Smart Notes
         </h2>
       </div>
 
-      {/* TITLE */}
-      <h1 style={{
-        fontFamily: "serif",
-        fontSize: "34px",
-        color: "#2A1F0D",
-        marginBottom: "6px"
-      }}>
+      <h1 className="mb-1.5 font-['Fraunces',serif] text-[clamp(1.9rem,6vw,2.125rem)] leading-tight text-[#2A1F0D]">
         Create{" "}
-        <span style={{
-          color: "#F4845F",
-          fontStyle: "italic",
-          fontWeight: "500"
-        }}>
+        <span className="font-medium italic text-[#F4845F]">
           account
         </span>
       </h1>
 
-      <p style={{
-        color: "#6B5B3E",
-        marginBottom: "28px",
-        fontSize: "15px"
-      }}>
+      <p className="mb-6 text-sm text-[#6B5B3E] sm:mb-7 sm:text-[15px]">
         Start capturing your ideas ✨
       </p>
 
-      {/* INPUTS */}
       <Input
         label="Email address"
         type="email"
@@ -108,37 +71,16 @@ const handleRegister = async () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      {/* BUTTON */}
       <button
         onClick={handleRegister}
-        style={{
-          width: "100%",
-          padding: "14px",
-          borderRadius: "14px",
-          background: "linear-gradient(135deg,#F6C347,#F4845F)",
-          color: "white",
-          border: "none",
-          marginTop: "12px",
-          fontWeight: "500",
-          fontSize: "15px",
-          cursor: "pointer"
-        }}
+        className="mt-3 inline-flex min-h-12 w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] px-4 py-3 text-[0.9375rem] font-medium text-white transition active:scale-[0.99]"
       >
         {loading ? "Creating..." : "Create account →"}
       </button>
 
-     
-      {/* LOGIN LINK */}
-      <p style={{
-        marginTop: "22px",
-        fontSize: "14px",
-        color: "#6B5B3E"
-      }}>
+      <p className="mt-5 text-sm text-[#6B5B3E]">
         Already have an account?{" "}
-        <Link to="/" style={{
-          color: "#F4845F",
-          fontWeight: "500"
-        }}>
+        <Link to="/" className="font-medium text-[#F4845F] transition hover:underline">
           Sign in →
         </Link>
       </p>

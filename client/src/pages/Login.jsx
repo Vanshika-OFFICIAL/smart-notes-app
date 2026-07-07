@@ -4,14 +4,7 @@ import LoginForm from "../components/auth/LoginForm";
 
 export default function Login() {
   return (
-    <div style={{
-      minHeight: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      background:
-        "linear-gradient(135deg,#FDF8EE,#FFF3E8,#FEFDF5,#F0FAF4)"
-    }}>
+    <div className="smart-bg relative flex min-h-dvh items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
       <Background />
       <AuthCard>
         <LoginForm />

@@ -96,13 +96,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "linear-gradient(135deg,#FDF8EE,#FFF3E8,#FEFDF5,#F0FAF4)",
-        position: "relative",
-      }}
-    >
+    <div className="smart-bg relative min-h-dvh overflow-x-clip">
       <Background />
 
       <Navbar
@@ -114,161 +108,69 @@ export default function Dashboard() {
         setEditingId={setEditingId}
       />
 
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "40px 24px",
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        {/* HERO */}
-        <div
-          style={{
-            marginBottom: "32px",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "42px",
-              fontFamily: "Fraunces, serif",
-              color: "#2A1F0D",
-              marginBottom: "10px",
-            }}
-          >
+      <main className="relative z-10 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+        <section className="mb-6 sm:mb-8 lg:mb-10">
+          <h1 className="max-w-3xl font-['Fraunces',serif] text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight text-[#2A1F0D]">
             Welcome to{" "}
-            <span
-              style={{
-                color: "#F4845F",
-                fontStyle: "italic",
-              }}
-            >
+            <span className="italic text-[#F4845F]">
               Smart Notes
             </span>
           </h1>
 
-          <p
-            style={{
-              color: "#6B5B3E",
-              fontSize: "16px",
-            }}
-          >
+          <p className="mt-2 text-sm text-[#6B5B3E] sm:text-base">
             Capture your thoughts beautifully ✨
           </p>
-        </div>
+        </section>
 
-        {/* CREATE NOTE */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.72)",
-            backdropFilter: "blur(18px)",
-            border: "1px solid rgba(246,195,71,0.15)",
-            borderRadius: "28px",
-            padding: "28px",
-            boxShadow: "0 10px 40px rgba(244,132,95,0.08)",
-            marginBottom: "34px",
-          }}
-        >
+        <section className="mb-6 rounded-[28px] border border-[rgba(246,195,71,0.15)] bg-[rgba(255,255,255,0.72)] p-4 shadow-[0_10px_40px_rgba(244,132,95,0.08)] backdrop-blur-[18px] sm:mb-8 sm:p-6 lg:mb-10 lg:p-7">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Note title..."
-            style={{
-              width: "100%",
-              border: "none",
-              outline: "none",
-              background: "transparent",
-              fontSize: "25px",
-              fontWeight: "700",
-              marginBottom: "18px",
-              color: "#2A1F0D",
-            }}
+            className="mb-3 w-full border-0 bg-transparent text-[clamp(1.25rem,3vw,1.625rem)] font-bold text-[#2A1F0D] outline-none placeholder:text-[#A89270] sm:mb-4"
           />
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Write your thoughts here..."
-            style={{
-              width: "100%",
-              minHeight: "160px",
-              border: "none",
-              outline: "none",
-              resize: "none",
-              background: "transparent",
-              fontSize: "16px",
-              color: "#2A1F0D",
-              lineHeight: 1.7,
-            }}
+            className="min-h-[160px] w-full resize-y border-0 bg-transparent text-sm leading-7 text-[#2A1F0D] outline-none placeholder:text-[#A89270] sm:min-h-[190px] sm:text-base lg:min-h-[220px]"
           />
 
-          <button
-            onClick={handleSave}
-            disabled={loading}
-            style={{
-              marginTop: "20px",
-              padding: "13px 24px",
-              borderRadius: "16px",
-              border: "none",
-              background: "linear-gradient(135deg,#F6C347,#F4845F)",
-              color: "white",
-              cursor: "pointer",
-              fontWeight: "600",
-              fontSize: "15px",
-              boxShadow: "0 10px 25px rgba(244,132,95,0.2)",
-            }}
-          >
-            {loading
-              ? "Saving..."
-              : editingId
-                ? "Update Note →"
-                : "Save Note →"}
-          </button>
-          {editingId && (
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <button
-              onClick={() => {
-                setEditingId(null);
-
-                setTitle("");
-
-                setText("");
-              }}
-              style={{
-                marginLeft: "12px",
-                padding: "13px 20px",
-                borderRadius: "14px",
-                border: "1px solid #eee",
-                background: "white",
-                cursor: "pointer",
-              }}
+              onClick={handleSave}
+              disabled={loading}
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-[16px] bg-gradient-to-br from-[#F6C347] to-[#F4845F] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(244,132,95,0.2)] transition active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-80 sm:w-auto sm:px-6"
             >
-              Cancel
+              {loading
+                ? "Saving..."
+                : editingId
+                  ? "Update Note →"
+                  : "Save Note →"}
             </button>
-          )}
-        </div>
 
-        {/* EMPTY STATE */}
+            {editingId && (
+              <button
+                onClick={() => {
+                  setEditingId(null);
+                  setTitle("");
+                  setText("");
+                }}
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-[14px] border border-[rgba(246,195,71,0.22)] bg-white px-5 py-3 text-sm font-medium text-[#2A1F0D] transition hover:bg-[#fff9f3] active:scale-[0.99] sm:w-auto"
+              >
+                Cancel
+              </button>
+            )}
+          </div>
+        </section>
+
         {notes.length === 0 && (
-          <div
-            style={{
-              textAlign: "center",
-              color: "#8B7355",
-              padding: "50px 0",
-              fontSize: "17px",
-            }}
-          >
+          <div className="py-12 text-center text-sm text-[#8B7355] sm:py-16 sm:text-base">
             No notes yet ✨
           </div>
         )}
 
-        {/* NOTES GRID */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
-            gap: "22px",
-          }}
-        >
+        <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6 2xl:grid-cols-4">
           {notes
             .filter((note) =>
               note.title?.toLowerCase().includes(search.toLowerCase()),
@@ -283,73 +185,30 @@ export default function Dashboard() {
 
                   setText(note.text);
                 }}
-                style={{
-                  background: "rgba(255,255,255,0.75)",
-                  backdropFilter: "blur(14px)",
-                  borderRadius: "24px",
-                  padding: "22px",
-                  border: "1px solid rgba(246,195,71,0.15)",
-                  boxShadow: "0 10px 30px rgba(244,132,95,0.08)",
-                  position: "relative",
-                  transition: "0.3s",
-                }}
+                className="group relative min-h-[220px] cursor-pointer rounded-[24px] border border-[rgba(246,195,71,0.15)] bg-[rgba(255,255,255,0.75)] p-4 shadow-[0_10px_30px_rgba(244,132,95,0.08)] backdrop-blur-[14px] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(244,132,95,0.12)] sm:p-5 lg:p-6"
               >
-                {/* DELETE BUTTON */}
                 <button
                   onClick={() => handleDelete(note._id)}
-                  style={{
-                    position: "absolute",
-                    top: "16px",
-                    right: "16px",
-                    border: "none",
-                    background: "#fff2ef",
-                    color: "#F4845F",
-                    width: "34px",
-                    height: "34px",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                    fontWeight: "bold",
-                  }}
+                  aria-label={`Delete note ${note.title || "Untitled"}`}
+                  className="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-[10px] border-0 bg-[#fff2ef] text-lg font-bold text-[#F4845F] transition hover:bg-[#ffe7e0] focus:outline-none focus:ring-2 focus:ring-[rgba(244,132,95,0.2)] sm:right-4 sm:top-4"
                 >
                   ×
                 </button>
 
-                {/* NOTE CONTENT */}
-                <h3
-                  style={{
-                    marginBottom: "12px",
-                    color: "#2A1F0D",
-                    fontSize: "22px",
-                  }}
-                >
+                <h3 className="mb-3 pr-12 text-[1.125rem] font-semibold leading-snug text-[#2A1F0D] sm:text-[1.25rem]">
                   {note.title || "Untitled"}
                 </h3>
-                <p
-                  style={{
-                    color: "#4A3A25",
-                    lineHeight: 1.8,
-                    fontSize: "15px",
-                    paddingRight: "20px",
-                    whiteSpace: "pre-wrap",
-                  }}
-                >
+                <p className="break-words pr-2 text-sm leading-7 text-[#4A3A25] sm:text-[15px]">
                   {note.text}
                 </p>
 
-                {/* DATE */}
-                <p
-                  style={{
-                    marginTop: "18px",
-                    fontSize: "12px",
-                    color: "#A89270",
-                  }}
-                >
+                <p className="mt-4 text-xs text-[#A89270] sm:mt-5">
                   {new Date(note.createdAt).toLocaleString()}
                 </p>
               </div>
             ))}
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
